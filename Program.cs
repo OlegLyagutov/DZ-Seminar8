@@ -10,6 +10,64 @@
 // 9 5 3 2
 // 8 4 4 2
 
+
+int[,] GetArray(int m, int n)
+{
+int[,] matrix = new int[m, n];
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+for (int j = 0; j < matrix.GetLength(1); j++)
+{
+matrix[i, j] = new Random().Next(11);
+}
+}
+return matrix;
+}
+
+void PrintArray(int[,] matrix)
+{
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+for (int j = 0; j < matrix.GetLength(1); j++)
+{
+Console.Write(matrix[i, j] + "\t");
+}
+Console.WriteLine();
+}
+}
+
+int rows = Convert.ToInt32(Console.ReadLine());
+int columns = Convert.ToInt32(Console.ReadLine());
+
+int[,] SortingArray(int[,] matrix)
+{
+    int[,] elementsArray = new int[matrix.GetLength(0), matrix.GetLength(1)];
+
+    int max = elementsArray[0,0];
+
+
+    // int[,] ChangeElements(int[,] matrix)
+    // {
+    //     int[,] result = new int[matrix.GetLength(0), matrix.GetLength(1)];
+    for (int i = 0; i < elementsArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < elementsArray.GetLength(1); j++)
+        {
+            if (elementsArray[i, j] > max)
+            {
+                max = elementsArray[i, j];
+            }
+
+        }
+    }
+    return elementsArray;
+}
+
+int[,] elementstMatrix = GetArray(rows, columns);
+PrintArray(elementstMatrix);
+Console.WriteLine("Результат: ");
+PrintArray(SortingArray(elementstMatrix));
+
 // Задача 56: Задайте прямоугольный двумерный массив. 
 // Напишите программу, которая будет находить строку 
 // с наименьшей суммой элементов.
