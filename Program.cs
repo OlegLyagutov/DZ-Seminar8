@@ -11,62 +11,42 @@
 // 8 4 4 2
 
 
-// int[,] GetArray(int m, int n)
-// {
-// int[,] matrix = new int[m, n];
-// for (int i = 0; i < matrix.GetLength(0); i++)
-// {
-// for (int j = 0; j < matrix.GetLength(1); j++)
-// {
-// matrix[i, j] = new Random().Next(11);
-// }
-// }
-// return matrix;
-// }
-
-// void PrintArray(int[,] matrix)
-// {
-// for (int i = 0; i < matrix.GetLength(0); i++)
-// {
-// for (int j = 0; j < matrix.GetLength(1); j++)
-// {
-// Console.Write(matrix[i, j] + "\t");
-// }
-// Console.WriteLine();
-// }
-// }
-
 // int rows = Convert.ToInt32(Console.ReadLine());
 // int columns = Convert.ToInt32(Console.ReadLine());
+// int[,] array = new  int[rows, columns];
 
-// int[,] SortingArray(int[,] matrix)
+// for (int i = 0; i < rows; i++)
 // {
-//     int[,] elementsArray = new int[matrix.GetLength(0), matrix.GetLength(1)];
-
-//     int max = elementsArray[0,0];
-
-
-//     // int[,] ChangeElements(int[,] matrix)
-//     // {
-//     //     int[,] result = new int[matrix.GetLength(0), matrix.GetLength(1)];
-//     for (int i = 0; i < elementsArray.GetLength(0); i++)
+//     for (int j = 0; j < columns; j++)
 //     {
-//         for (int j = 0; j < elementsArray.GetLength(1); j++)
-//         {
-//             if (elementsArray[i, j] > max)
-//             {
-//                 max = elementsArray[i, j];
-//             }
-
-//         }
+//         array[i, j] = new Random().Next(11);
+        
+//         Console.Write(array[i, j] + "\t");
 //     }
-//     return elementsArray;
+//     Console.WriteLine();
+// }
+// Console.WriteLine();
+// Console.WriteLine($"Результат: ");
+// Console.WriteLine();
+
+// for (int i = 0; i < array.GetLength(0); i++) 
+// {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         for (int k = j + 1; k < array.GetLength(1); k++)
+//         {
+//             if (array[i, j] < array[i, k])
+//             {
+//                 int temp = array[i, j];
+//                 array[i, j] = array[i, k];
+//                 array[i, k] = temp;
+//             }
+//         }
+//         Console.Write(array[i, j] + "\t");   
+//     } 
+//     Console.WriteLine();   
 // }
 
-// int[,] elementstMatrix = GetArray(rows, columns);
-// PrintArray(elementstMatrix);
-// Console.WriteLine("Результат: ");
-// PrintArray(SortingArray(elementstMatrix));
 
 // Задача 56: Задайте прямоугольный двумерный массив. 
 // Напишите программу, которая будет находить строку 
@@ -129,56 +109,48 @@
 // 18 20
 // 15 18
 
-int rowsFirst = Convert.ToInt32(Console.ReadLine());
-int columnsFirst = Convert.ToInt32(Console.ReadLine());
-int rowsSecend = Convert.ToInt32(Console.ReadLine());
-int columnsSecend = Convert.ToInt32(Console.ReadLine());
+// int rowsFirst = Convert.ToInt32(Console.ReadLine());
+// int columnsFirst = Convert.ToInt32(Console.ReadLine());
+// int rowsSecend = Convert.ToInt32(Console.ReadLine());
+// int columnsSecend = Convert.ToInt32(Console.ReadLine());
+// int rowsNew = Convert.ToInt32(Console.ReadLine());
+// int columnsNew = Convert.ToInt32(Console.ReadLine());
 
-int[,] matrixFirst = new  int[rowsFirst, columnsFirst];
+// int[,] matrixFirst = new  int[rowsFirst, columnsFirst];
 
-for (int i = 0; i < rowsFirst; i++)
-{
-    for (int j = 0; j < columnsFirst; j++)
-    {
-        matrixFirst[i, j] = new Random().Next(11);
-        Console.Write(matrixFirst[i, j] + "\t");
-    }
-    // Console.WriteLine($"Сумма {i + 1} строки равна: {sumRows[i]}");
-    Console.WriteLine();
-}
-Console.WriteLine();
-
-int[,] matrixSecend = new  int[rowsSecend, columnsSecend];
-
-for (int m = 0; m < rowsSecend; m++)
-{
-    for (int n = 0; n < columnsSecend; n++)
-    {
-        matrixSecend[m, n] = new Random().Next(11);
-        Console.Write(matrixSecend[m, n] + "\t");
-    }
-    //Console.WriteLine($"Сумма {i + 1} строки равна: {sumRows[i]}");
-    
-    Console.WriteLine();
-}
-int rowsNew = Convert.ToInt32(Console.ReadLine());
-int columnsNew = Convert.ToInt32(Console.ReadLine());
-int[,] newMatrix = new int[rowsFirst * rowsSecend, columnsFirst * columnsSecend];
-
-// for (int k = 0; k < rowsNew; k++)
+// for (int i = 0; i < rowsFirst; i++)
 // {
-//     for (int f = 0; f < columnsNew; f++)
+//     for (int j = 0; j < columnsFirst; j++)
 //     {
-//         // newMatrix[k, f] =  matrixFirst[i, j] * matrixSecend[m, n];
-        
-//         newMatrix[k, f] =  matrixFirst[i, j] * matrixSecend[m, n];
-//         Console.Write(matrixSecend[k, n] + "\t");
+//         matrixFirst[i, j] = new Random().Next(11);
+//         Console.Write(matrixFirst[i, j] + "\t");
 //     }
-//Console.WriteLine($"Результирующая матрица будет: {newMatrix[k, f]}");
+//     Console.WriteLine();
+// }
+// Console.WriteLine();
 
+// int[,] matrixSecend = new  int[rowsSecend, columnsSecend];
+// for (int i = 0; i < rowsSecend; i++)
+// {
+//     for (int j = 0; j < columnsSecend; j++)
+//     {
+//         matrixSecend[i, j] = new Random().Next(11);
+//         Console.Write(matrixSecend[i, j] + "\t");
+//     }
+//     Console.WriteLine();
+// }
+// Console.WriteLine($"Результирующая матрица будет: ");
 
-Console.Write(newMatrix);
-
+// int[,] newMatrix = new int[rowsNew, columnsNew];
+// for (int i = 0; i < rowsNew; i++)
+// {
+//     for (int j = 0; j < columnsNew; j++)
+//     {       
+//         newMatrix[i, j] =  matrixFirst[i, j] * matrixSecend[i, j];
+//         Console.Write(newMatrix[i, j] + "\t");
+//     }
+//     Console.WriteLine();
+// }
 
 
 // Задача 60. ...Сформируйте трёхмерный массив из 
